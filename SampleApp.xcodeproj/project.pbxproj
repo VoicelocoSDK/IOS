@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F5E4CD1211194BD001807DC /* resiprocate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F5E4CCF211194BC001807DC /* resiprocate.framework */; };
+		6F5E4CD2211194BD001807DC /* resiprocate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6F5E4CCF211194BC001807DC /* resiprocate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6F5E4CD3211194BD001807DC /* VLVoice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F5E4CD0211194BD001807DC /* VLVoice.framework */; };
+		6F5E4CD4211194BD001807DC /* VLVoice.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6F5E4CD0211194BD001807DC /* VLVoice.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6F5F690E204FDD4D0042A625 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5F690D204FDD4D0042A625 /* AppDelegate.m */; };
 		6F5F6911204FDD4D0042A625 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5F6910204FDD4D0042A625 /* ViewController.m */; };
 		6F5F6914204FDD4D0042A625 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F5F6912204FDD4D0042A625 /* Main.storyboard */; };
@@ -15,7 +19,24 @@
 		6F5F691C204FDD4D0042A625 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5F691B204FDD4D0042A625 /* main.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6F5E4CD5211194BD001807DC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6F5E4CD2211194BD001807DC /* resiprocate.framework in Embed Frameworks */,
+				6F5E4CD4211194BD001807DC /* VLVoice.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		6F5E4CCF211194BC001807DC /* resiprocate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = resiprocate.framework; sourceTree = "<group>"; };
+		6F5E4CD0211194BD001807DC /* VLVoice.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VLVoice.framework; sourceTree = "<group>"; };
 		6F5F6909204FDD4D0042A625 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F5F690C204FDD4D0042A625 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6F5F690D204FDD4D0042A625 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -34,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F5E4CD1211194BD001807DC /* resiprocate.framework in Frameworks */,
+				6F5E4CD3211194BD001807DC /* VLVoice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +100,8 @@
 		6FE63B9B20523C4B00042985 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6F5E4CCF211194BC001807DC /* resiprocate.framework */,
+				6F5E4CD0211194BD001807DC /* VLVoice.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -91,6 +116,7 @@
 				6F5F6905204FDD4D0042A625 /* Sources */,
 				6F5F6906204FDD4D0042A625 /* Frameworks */,
 				6F5F6907204FDD4D0042A625 /* Resources */,
+				6F5E4CD5211194BD001807DC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

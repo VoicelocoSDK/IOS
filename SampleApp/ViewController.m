@@ -176,7 +176,7 @@ static NSString *const kDevRestURL = @"http://116.122.36.39:3300/api/v1.0";
     
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:kAppkey forHTTPHeaderField:@"Api-Key"];
+    [request setValue:kAppKey forHTTPHeaderField:@"Api-Key"];
     
     // process response data.
     NSURLSessionTask *task = [defaultSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
