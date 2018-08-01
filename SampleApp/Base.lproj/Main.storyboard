@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Callee Account" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eay-Ui-zK3">
+                                <rect key="frame" x="30" y="96" width="315" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" textContentType="email"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMC-vi-7eZ">
+                                <rect key="frame" x="172" y="485.5" width="30" height="30"/>
+                                <state key="normal" title="Call"/>
+                                <connections>
+                                    <action selector="onCallButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zBL-Us-Wgb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status : idle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3e-0f-ALU">
+                                <rect key="frame" x="138.5" y="322" width="99" height="24"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="b6R-Fo-yjx">
+                                <rect key="frame" x="69.5" y="485" width="51" height="31"/>
+                                <connections>
+                                    <action selector="onMuteSwitchClick:" destination="BYZ-38-t0r" eventType="valueChanged" id="yjr-RP-rXq"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FBq-5E-NZS">
+                                <rect key="frame" x="257" y="485" width="51" height="31"/>
+                                <connections>
+                                    <action selector="onSpeakerSwitchClick:" destination="BYZ-38-t0r" eventType="valueChanged" id="cus-UU-mL9"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGn-2j-k0c">
+                                <rect key="frame" x="78" y="459" width="33" height="18"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBM-Tu-eRe">
+                                <rect key="frame" x="256" y="459" width="50.5" height="18"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Caller Account" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ekB-Im-4qu">
+                                <rect key="frame" x="30" y="156" width="315" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" textContentType="email"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xBM-Tu-eRe" firstAttribute="centerX" secondItem="FBq-5E-NZS" secondAttribute="centerX" id="8zu-yl-mhu"/>
+                            <constraint firstItem="FBq-5E-NZS" firstAttribute="centerY" secondItem="IMC-vi-7eZ" secondAttribute="centerY" id="Jr0-F5-yfZ"/>
+                            <constraint firstItem="FBq-5E-NZS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1.5:1" id="K3U-9x-wiV"/>
+                            <constraint firstItem="Eay-Ui-zK3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="K7L-JQ-orE"/>
+                            <constraint firstItem="FBq-5E-NZS" firstAttribute="top" secondItem="xBM-Tu-eRe" secondAttribute="bottom" constant="8" id="LMx-aN-958"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Eay-Ui-zK3" secondAttribute="trailing" constant="30" id="O1B-pV-4o3"/>
+                            <constraint firstItem="IMC-vi-7eZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.5:1" id="bOR-sV-9Or"/>
+                            <constraint firstItem="y3e-0f-ALU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bgq-LF-Fvz"/>
+                            <constraint firstItem="b6R-Fo-yjx" firstAttribute="top" secondItem="YGn-2j-k0c" secondAttribute="bottom" constant="8" id="cOU-bO-Wlm"/>
+                            <constraint firstItem="b6R-Fo-yjx" firstAttribute="centerY" secondItem="IMC-vi-7eZ" secondAttribute="centerY" id="foQ-gc-aAG"/>
+                            <constraint firstItem="Eay-Ui-zK3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="gRs-1g-NLe"/>
+                            <constraint firstItem="IMC-vi-7eZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gyd-Yo-IuW"/>
+                            <constraint firstItem="ekB-Im-4qu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="hCb-Et-IQz"/>
+                            <constraint firstItem="Eay-Ui-zK3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1:3" id="htM-jg-7d5"/>
+                            <constraint firstItem="y3e-0f-ALU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jWT-Du-Nqn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ekB-Im-4qu" secondAttribute="trailing" constant="30" id="lpE-9q-FKI"/>
+                            <constraint firstItem="b6R-Fo-yjx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1:2" id="nxJ-sF-YFy"/>
+                            <constraint firstItem="YGn-2j-k0c" firstAttribute="centerX" secondItem="b6R-Fo-yjx" secondAttribute="centerX" id="osK-mT-g0B"/>
+                            <constraint firstItem="ekB-Im-4qu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vTH-4U-kZQ"/>
+                            <constraint firstItem="ekB-Im-4qu" firstAttribute="top" secondItem="Eay-Ui-zK3" secondAttribute="bottom" constant="30" id="vzb-Ni-8a4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="IMC-vi-7eZ" id="IHJ-4D-Me6"/>
+                        <outlet property="calleeAccountField" destination="Eay-Ui-zK3" id="ydN-FU-CwD"/>
+                        <outlet property="callerAccountField" destination="ekB-Im-4qu" id="Hg7-ee-A4I"/>
+                        <outlet property="muteSwitch" destination="b6R-Fo-yjx" id="s6K-Se-JPO"/>
+                        <outlet property="speakerSwitch" destination="FBq-5E-NZS" id="vB9-w9-Zgi"/>
+                        <outlet property="statusLabel" destination="y3e-0f-ALU" id="Bxz-Oo-M82"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
