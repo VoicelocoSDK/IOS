@@ -15,9 +15,20 @@
   ```
   이 두 파일을 프로젝트 안에 복사 후 해당 프로젝트 세팅의 'Embbeded Binarie' 탭에 추가하면 VoiceLoco Call SDK 설정이 완료됩니다.
 
-* **CocoaPod, Carthage**
+* **CocoaPod**
+
+  ```
+  pod 'VLVoice'
+  ```
+
+* **Carthage**
  
   현재 지원준비중입니다.
+
+* **기타**
+
+  - 현재 시뮬레이터는 지원하지 않습니다.
+  - Bitcode를 지원하지 않으므로 Build Setting - Build Option - Enable Bitcode에서 값을 `NO`로 설정해주세요.
 
 
 ## 사용법
