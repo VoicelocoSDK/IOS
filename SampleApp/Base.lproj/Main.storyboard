@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,14 +25,14 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" textContentType="email"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMC-vi-7eZ">
-                                <rect key="frame" x="172" y="485.5" width="30" height="30"/>
+                                <rect key="frame" x="172.5" y="485.5" width="30" height="30"/>
                                 <state key="normal" title="Call"/>
                                 <connections>
-                                    <action selector="onCallButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zBL-Us-Wgb"/>
+                                    <action selector="onCallButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FMt-5n-jIX"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status : idle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3e-0f-ALU">
-                                <rect key="frame" x="138.5" y="322" width="99" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status : -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3e-0f-ALU">
+                                <rect key="frame" x="148.5" y="321.5" width="78" height="24"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -51,7 +50,7 @@
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGn-2j-k0c">
-                                <rect key="frame" x="78" y="459" width="33" height="18"/>
+                                <rect key="frame" x="77.5" y="459" width="33" height="18"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -68,6 +67,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" textContentType="email"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cs2-DH-vby">
+                                <rect key="frame" x="159" y="402" width="57" height="30"/>
+                                <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="onRegisterButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gBN-Nx-QdX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -77,6 +83,7 @@
                             <constraint firstItem="Eay-Ui-zK3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="K7L-JQ-orE"/>
                             <constraint firstItem="FBq-5E-NZS" firstAttribute="top" secondItem="xBM-Tu-eRe" secondAttribute="bottom" constant="8" id="LMx-aN-958"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Eay-Ui-zK3" secondAttribute="trailing" constant="30" id="O1B-pV-4o3"/>
+                            <constraint firstItem="Cs2-DH-vby" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tui-W4-oun"/>
                             <constraint firstItem="IMC-vi-7eZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.5:1" id="bOR-sV-9Or"/>
                             <constraint firstItem="y3e-0f-ALU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bgq-LF-Fvz"/>
                             <constraint firstItem="b6R-Fo-yjx" firstAttribute="top" secondItem="YGn-2j-k0c" secondAttribute="bottom" constant="8" id="cOU-bO-Wlm"/>
@@ -90,15 +97,17 @@
                             <constraint firstItem="b6R-Fo-yjx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1:2" id="nxJ-sF-YFy"/>
                             <constraint firstItem="YGn-2j-k0c" firstAttribute="centerX" secondItem="b6R-Fo-yjx" secondAttribute="centerX" id="osK-mT-g0B"/>
                             <constraint firstItem="ekB-Im-4qu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vTH-4U-kZQ"/>
+                            <constraint firstItem="Cs2-DH-vby" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="5:4" id="vrF-gW-ATA"/>
                             <constraint firstItem="ekB-Im-4qu" firstAttribute="top" secondItem="Eay-Ui-zK3" secondAttribute="bottom" constant="30" id="vzb-Ni-8a4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="button" destination="IMC-vi-7eZ" id="IHJ-4D-Me6"/>
+                        <outlet property="callButton" destination="IMC-vi-7eZ" id="Zch-Mw-sTe"/>
                         <outlet property="calleeAccountField" destination="Eay-Ui-zK3" id="ydN-FU-CwD"/>
                         <outlet property="callerAccountField" destination="ekB-Im-4qu" id="Hg7-ee-A4I"/>
                         <outlet property="muteSwitch" destination="b6R-Fo-yjx" id="s6K-Se-JPO"/>
+                        <outlet property="registerButton" destination="Cs2-DH-vby" id="YeG-zL-nDh"/>
                         <outlet property="speakerSwitch" destination="FBq-5E-NZS" id="vB9-w9-Zgi"/>
                         <outlet property="statusLabel" destination="y3e-0f-ALU" id="Bxz-Oo-M82"/>
                     </connections>

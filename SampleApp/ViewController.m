@@ -27,7 +27,8 @@ static NSString *const kDevRestURL = @"http://116.122.36.39:3300/api/v1.0";
 @property (strong, nonatomic) IBOutlet UITextField *callerAccountField;
 
 @property (strong, nonatomic) IBOutlet UILabel *statusLabel;
-@property (strong, nonatomic) IBOutlet UIButton *button;
+@property (strong, nonatomic) IBOutlet UIButton *registerButton;
+@property (strong, nonatomic) IBOutlet UIButton *callButton;
 @property (strong, nonatomic) IBOutlet UISwitch *muteSwitch;
 @property (strong, nonatomic) IBOutlet UISwitch *speakerSwitch;
 
@@ -96,41 +97,49 @@ static NSString *const kDevRestURL = @"http://116.122.36.39:3300/api/v1.0";
 }
 */
 
+- (IBAction)onRegisterButtonClick:(id)sender
+{
+    // First, get AccessToken from Server and register current user.
+    if([_callerAccountField.text length] > 0) {
+        NSString *callerAccount = _callerAccountField.text;
+        if (_accessToken == nil) {
+            [self getAccessToken:^(NSString *accessToken) {
+                _accessToken = accessToken;
+                NSLog(@"accessToken : %@", accessToken);
+                
+                [VLVoice registerWithUserId:callerAccount
+                                AccessToken:accessToken
+                                deviceToken:_deviceToken
+                                 completion:^(NSError *error) {
+                                     dispatch_async(dispatch_get_main_queue(), ^{
+                                         if (error) {
+                                             _callButton.enabled = NO;
+                                         } else {
+                                             _statusLabel.text = @"Status : Registered";
+                                             _callButton.enabled = YES;
+                                             _registerButton.enabled = NO;
+                                         }
+                                     });
+                                 }];
+            }];
+        }
+    }
+}
+
 - (IBAction)onCallButtonClick:(id)sender
 {
     if(_call) {
         [_call disconnect];
-
+        
     } else {
         if([_calleeAccountField.text length] > 0) {
-            if (_accessToken == nil) {
-                // 최초 실행시에는 token을 바로 받지 못하기때문에 버튼을 누를 때 받아온 다음 전화를 건다
-                [self getAccessToken:^(NSString *accessToken) {
-                    _accessToken = accessToken;
-                    NSLog(@"accesToken : %@", accessToken);
-                    
-                    [VLVoice registerWithUserId:_callerAccountField.text
-                                    AccessToken:accessToken
-                                    deviceToken:_deviceToken
-                                     completion:^(NSError *error) {
-                                         if (error) {
-                                             
-                                         } else {
-                                             NSLog(@"call to : %@", _calleeAccountField.text);
-                                             
-                                             [self reportOutgoingCallWithCalleeAccount:_calleeAccountField.text];
-                                             
-//                                             [self saveUserCredentials];
-                                         }
-                                     }];
-                }];
-                return;
-            }
-            
             NSLog(@"call to : %@", _calleeAccountField.text);
-
+            
+            _statusLabel.text = @"Status : Ringing";
+            
+            [_callButton setTitle:@"Call Cancel" forState:UIControlStateNormal];
+            
             [self reportOutgoingCallWithCalleeAccount:_calleeAccountField.text];
-
 //            [self saveUserCredentials];
         }
     }
@@ -314,28 +323,7 @@ static NSString *const kDevRestURL = @"http://116.122.36.39:3300/api/v1.0";
     NSLog(@"pushRegistry:didUpdatePushCredentials:forType:");
     
     if ([type isEqualToString:PKPushTypeVoIP]) {
-        if([_callerAccountField.text isEqualToString:@""]) {
-            // 로그인 할 유저 id를 모르면 푸시토큰만 먼저 저장
-            _deviceToken = credentials.token;
-            return;
-        }
-        
-        // get access token at app launch
-        NSString *userId = _callerAccountField.text;
-        [self getAccessToken:^(NSString *accessToken) {
-            _accessToken = accessToken;
-            
-            [VLVoice registerWithUserId:userId
-                            AccessToken:accessToken
-                            deviceToken:credentials.token
-                             completion:^(NSError * _Nullable error) {
-                                 if (error) {
-                                     NSLog(@"%@", [error localizedDescription]);
-                                 } else {
-                                     NSLog(@"access token register complete.");
-                                 }
-                             }];
-        }];
+        _deviceToken = credentials.token;
     }
 }
 
@@ -360,7 +348,7 @@ static NSString *const kDevRestURL = @"http://116.122.36.39:3300/api/v1.0";
     
     [_callKitProvider reportOutgoingCallWithUUID:call.uuid connectedAtDate:[NSDate date]];
     
-    [_button setTitle:@"End Call" forState:UIControlStateNormal];
+    [_callButton setTitle:@"End Call" forState:UIControlStateNormal];
     
     [self updateCallState];
 }
@@ -369,7 +357,7 @@ static NSString *const kDevRestURL = @"http://116.122.36.39:3300/api/v1.0";
 {
     NSLog(@"VLCallDelegate didFailToConnectWithError");
     
-    [_button setTitle:@"Call" forState:UIControlStateNormal];
+    [_callButton setTitle:@"Call" forState:UIControlStateNormal];
     
     [self performEndCallActionWithUUID:_call.uuid];
     
@@ -388,7 +376,7 @@ static NSString *const kDevRestURL = @"http://116.122.36.39:3300/api/v1.0";
         [self performEndCallActionWithUUID:_call.uuid];
     }
     
-    [_button setTitle:@"Call" forState:UIControlStateNormal];
+    [_callButton setTitle:@"Call" forState:UIControlStateNormal];
     
     _call = nil;
     
@@ -410,7 +398,7 @@ static NSString *const kDevRestURL = @"http://116.122.36.39:3300/api/v1.0";
             _statusLabel.text = @"Status : Disconnected";
         }
     } else {
-        _statusLabel.text = @"Status : idle";
+        _statusLabel.text = @"Status : -";
     }
 }
 
